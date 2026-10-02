@@ -1,0 +1,96 @@
+flight_search_task:
+  description: >
+    Research suitable flight options from {origin} to {destination}
+    for travel between {start_date} and {end_date}.
+
+    Consider:
+    - Price
+    - Duration
+    - Number of stops
+    - Travel convenience
+
+  expected_output: >
+    A clear summary of recommended flight options,
+    including estimated prices and travel duration.
+
+  agent: flight_agent
+
+
+hotel_search_task:
+  description: >
+    Find suitable hotel options in {destination}
+    between {start_date} and {end_date}.
+
+    The total trip budget is {budget} {currency}.
+
+    Compare hotels based on:
+    - Location
+    - Price
+    - Rating
+    - Amenities
+
+  expected_output: >
+    A shortlist of recommended hotels with estimated
+    nightly and total accommodation costs.
+
+  agent: hotel_agent
+
+
+weather_analysis_task:
+  description: >
+    Analyze the typical weather conditions in {destination}
+    during the travel period from {start_date} to {end_date}.
+
+  expected_output: >
+    A weather summary including temperature,
+    expected conditions and packing recommendations.
+
+  agent: weather_agent
+
+
+budget_analysis_task:
+  description: >
+    Calculate an estimated budget for a trip from
+    {origin} to {destination}.
+
+    Number of travelers: {travelers}
+
+    Maximum budget:
+    {budget} {currency}
+
+    Include:
+    - Flights
+    - Hotels
+    - Food
+    - Local transportation
+    - Activities
+    - Miscellaneous costs
+
+  expected_output: >
+    A detailed budget breakdown showing estimated
+    costs and whether the trip fits within the budget.
+
+  agent: budget_agent
+
+
+itinerary_task:
+  description: >
+    Create a complete travel plan for the trip from
+    {origin} to {destination} between
+    {start_date} and {end_date}.
+
+    Use information produced by the previous agents.
+
+    Preferences:
+    {preferences}
+
+  expected_output: >
+    A detailed day-by-day itinerary including:
+    - Morning activities
+    - Afternoon activities
+    - Evening activities
+    - Food recommendations
+    - Transportation considerations
+    - Estimated daily costs
+
+  agent: itinerary_agent
